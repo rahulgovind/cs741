@@ -44,7 +44,6 @@ function parseFields(details) {
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
 		var xss = false;
-		console.log("Hello world");
 		var fields = parseFields(details);
 		for (key in fields) {
 			var value = fields[key];
