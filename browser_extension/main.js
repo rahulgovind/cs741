@@ -50,12 +50,11 @@ chrome.webRequest.onBeforeRequest.addListener(
 			var value = fields[key];
 			if (value.isArray) {
 				for (v in value) {
-					xss = containsXSS(fields[key]) || xss;
+					xss = containsXSS(v) || xss;
 				}
 			} else {
 				xss = containsXSS(fields[key] || xss);
 			}
-
 
 			if (xss)
 				break;
@@ -65,7 +64,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 			return {cancel : true};
 		}
 	},
-    {
+	{
 		urls: ["<all_urls>"]
 	},
     ["blocking", "requestBody"]
