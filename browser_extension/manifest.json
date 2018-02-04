@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "XSS Blocker",
+  "description": "Blocks requests that might indicate an XSS attack",
+  "version": "0.1",
+  "background": {
+    "scripts": ["main.js"]
+  },
+  "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+	  "<all_urls>"
+  ]
+}
