@@ -30,16 +30,6 @@ function parseGETFields(details) {
 
 function parsePOSTFields(details) {
 	return details.requestBody.formData;
-	result = {}
-	var formData = details.requestBody.formData;
-	alert(formData["postp"]);
-
-	for (var key in formData) {
-		result[key] = formData[key];
-	}
-
-	alert('postp =>' + result['postp']);
-	return result;
 }
 
 function parseFields(details) {
